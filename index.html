@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>배달 앱 광고비 누수 진단: 순이익 2배 역발상 마케팅 전략</title>
   <meta name="description" content="배달 앱 사장님을 위한 광고비 누수 진단과 순이익을 높이는 6가지 역발상 마케팅 전략." />
-  <link rel="icon" type="image/png" href="datapuree_home_favicon.png" />
   <style>
     :root{
       --bg: #0b1220;
@@ -118,7 +117,9 @@
     }
     .heroMain > *{position:relative}
 
-    .kicker{display:block; font-size:14px; color: var(--muted);
+    .kicker{display:inline-flex; gap:8px; align-items:center; font-size:14px; color: var(--muted);
+      padding: 6px 10px; border-radius:999px; border:1px solid rgba(255,255,255,0.14);
+      background: rgba(255,255,255,0.04);
     }
     h1{margin: 14px 0 12px; font-size: 34px; line-height: 1.25; letter-spacing: -0.8px}
     .sub{margin:0; color: var(--muted); line-height: 1.85; font-size: 17px; max-width: 64ch}
@@ -230,6 +231,9 @@
 
     .visual{
       padding: 14px; /* 도식 여백 조금 더 */
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.03);
       overflow:hidden;
     }
 
@@ -280,39 +284,7 @@
 
     /* 도식 안 텍스트가 잘리지 않도록 약간의 행간 */
     .visual svg{ overflow: visible; }
-
-    /* 수식 스타일 */
-    .formula {
-      display: block;
-      margin: 12px 0;
-      padding: 12px;
-      border-radius: 12px;
-      background: rgba(0,0,0,0.2);
-      border-left: 3px solid rgba(139,213,255,0.4);
-    }
-    .formula-label {
-      display: block;
-      margin-bottom: 8px;
-      color: rgba(255,255,255,0.7);
-      font-size: 14px;
-    }
-    .formula-content {
-      font-size: 16px;
-      line-height: 1.8;
-    }
   </style>
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-  <script>
-    window.MathJax = {
-      tex: {
-        inlineMath: [['$', '$'], ['\\(', '\\)']],
-        displayMath: [['$$', '$$'], ['\\[', '\\]']],
-        processEscapes: true,
-        processEnvironments: true
-      }
-    };
-  </script>
 </head>
 <body>
 
@@ -346,6 +318,8 @@
       <div class="heroGrid">
         <div class="card heroMain">
           <div class="kicker">
+            
+            <span style="width:6px"></span>
             <span class="pill">광고·쿠폰·리뷰·사진</span>
           </div>
           <h1>배달 앱 사장님, 당신의 광고비는 이렇게 새고 있습니다<br/>순이익을 2배로 늘리는 6가지 역발상 마케팅 전략</h1>
@@ -458,7 +432,7 @@
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M4 7h16" stroke="rgba(255,255,255,0.85)" stroke-width="2" stroke-linecap="round"/><path d="M7 7v14" stroke="rgba(255,255,255,0.85)" stroke-width="2" stroke-linecap="round"/><path d="M17 7v14" stroke="rgba(255,255,255,0.85)" stroke-width="2" stroke-linecap="round"/><path d="M4 21h16" stroke="rgba(255,255,255,0.85)" stroke-width="2" stroke-linecap="round"/></svg>
             2.2. 핵심 원리 설명
           </h3>
-          <p>배달 앱 광고 시스템은 단순히 입찰가만으로 순위를 정하지 않습니다. 클릭 후 실제 주문으로 이어지는 '전환율(CVR, Conversion Rate)'이 높은, 즉 '가게 품질 지수'가 좋은 가게가 낮은 입찰가로도 높은 광고 효율을 얻도록 설계되어 있습니다. 여기서 가게 품질 지수란 매력적인 메뉴 사진, 긍정적인 리뷰, 짜임새 있는 메뉴 구성 등을 종합한 개념입니다.</p>
+          <p>배달 앱 광고 시스템은 단순히 입찰가만으로 순위를 정하지 않습니다. 클릭 후 실제 주문으로 이어지는 '전환율(CVR)'이 높은, 즉 '가게 품질 지수'가 좋은 가게가 낮은 입찰가로도 높은 광고 효율을 얻도록 설계되어 있습니다. 여기서 가게 품질 지수란 매력적인 메뉴 사진, 긍정적인 리뷰, 짜임새 있는 메뉴 구성 등을 종합한 개념입니다.</p>
 
           <div class="flow" aria-label="광고 효율 구조">
             <div class="node">
@@ -466,7 +440,7 @@
               <span>상위 노출의 일부 요소</span>
             </div>
             <div class="arrow" aria-hidden="true">
-              <svg width="34" height="34" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 12h14" stroke="rgba(255,255,255,0.55)" stroke-width="2" stroke-linecap="round"/><path d="M13 8l4 4-4 4" stroke="rgba(255,255,255,0.55)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <svg width="34" height="34" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 5v14" stroke="rgba(255,255,255,0.55)" stroke-width="2" stroke-linecap="round"/><path d="M8 15l4 4 4-4" stroke="rgba(255,255,255,0.55)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </div>
             <div class="node">
               <b>가게 품질 지수</b>
@@ -526,31 +500,10 @@
         <div class="box">
           <h3>3.2. 새로운 계산법 제시</h3>
           <p>진정한 광고 효과를 측정하기 위해서는 '순증가 매출'의 개념을 도입해야 합니다. 광고로 인해 순수하게 늘어난 매출만을 기준으로 투자 수익률(ROI)을 계산해야 낭비되는 비용을 찾을 수 있습니다.</p>
-          <div aria-label="ROI 계산식" style="margin-top: 12px;">
-            <div class="formula">
-              <span class="formula-label">잘못된 ROI:</span>
-              <div class="formula-content">
-                $$\text{ROI} = \frac{\text{광고로 발생한 총 매출}}{\text{광고비}}$$
-              </div>
-            </div>
-            <div class="formula" style="border-left-color: rgba(169,255,207,0.4);">
-              <span class="formula-label">진짜 ROI:</span>
-              <div class="formula-content">
-                $$\text{ROI} = \frac{\text{광고로 발생한 총 매출} - \text{광고비} - \text{기본 매출}}{\text{광고비}}$$
-              </div>
-            </div>
-          </div>
+          <div class="code" aria-label="ROI 계산식">
+            잘못된 ROI: (광고로 발생한 총 매출 / 광고비)
 
-          <div class="callout" style="margin-top:16px; border-style:solid; border-color: rgba(255,210,139,0.25);">
-            <b>기본 매출 측정 방법</b>
-            <p>기본 매출(광고 없이도 발생했을 매출)을 측정하는 방법은 다음과 같습니다:</p>
-            <ul style="margin: 8px 0 0; padding-left: 20px; color: var(--muted); line-height:1.9; font-size: 15px">
-              <li><b>광고 중단 기간 비교:</b> 광고를 일시적으로 중단한 기간의 매출을 측정하여 기본 매출을 추정합니다. (예: 1주일 광고 중단 후 매출)</li>
-              <li><b>과거 데이터 분석:</b> 광고를 시작하기 전의 평균 매출을 기준으로 합니다. 다만 시장 환경 변화를 고려해야 합니다.</li>
-              <li><b>단골 고객 주문 추적:</b> 광고 유입 경로를 분석하여, 광고를 통해 들어온 주문 중 재주문 고객의 비율을 파악하고 이를 제외합니다.</li>
-              <li><b>대조군 비교:</b> 유사한 조건의 다른 가게나, 같은 가게의 다른 시간대(광고 없는 시간대) 매출과 비교합니다.</li>
-            </ul>
-            <p style="margin-top: 10px; margin-bottom: 0;">정확한 측정은 어렵지만, 여러 방법을 조합하여 합리적인 추정치를 산출할 수 있습니다.</p>
+            진짜 ROI: (광고로 발생한 총 매출 - 광고비 - 광고 없이도 발생했을 기본 매출) / 광고비
           </div>
 
           <div class="callout" style="margin-top:12px">
@@ -588,28 +541,29 @@
       <div class="grid">
         <div class="box">
           <h3>4.1. 쿠폰의 핵심 목표 재정의</h3>
-          <p>쿠폰의 목표는 단순히 고객에게 할인을 제공하는 것이 아닙니다. 가게의 '객단가(AOV, Average Order Value)'를 의도적으로 높여 총이익을 방어하거나 오히려 늘리는 고도의 전략적 도구여야 합니다.</p>
+          <p>쿠폰의 목표는 단순히 고객에게 할인을 제공하는 것이 아닙니다. 가게의 '객단가(AOV)'를 의도적으로 높여 총이익을 방어하거나 오히려 늘리는 고도의 전략적 도구여야 합니다.</p>
 
           <div class="visual" aria-label="AOV 상승 도식">
             <svg viewBox="0 0 680 170" width="100%" height="170" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="쿠폰은 객단가를 올리는 장치">
-              <text x="22" y="34" fill="rgba(255,255,255,0.78)" font-size="16">쿠폰의 목표 = 객단가(AOV, Average Order Value) 설계</text>
+              <rect x="0" y="0" width="680" height="170" rx="16" fill="rgba(255,255,255,0.03)"/>
+              <text x="22" y="34" fill="rgba(255,255,255,0.78)" font-size="16">쿠폰의 목표 = 객단가(AOV) 설계</text>
               <rect x="22" y="60" width="260" height="24" rx="12" fill="rgba(255,210,139,0.20)" stroke="rgba(255,210,139,0.34)"/>
               <text x="32" y="77" fill="rgba(255,255,255,0.7)" font-size="15">현재 AOV</text>
 
               <path d="M310 72h70" stroke="rgba(255,255,255,0.25)" stroke-width="2" stroke-dasharray="6 6"/>
-              <path d="M380 66 L388 72 L380 78 Z" fill="rgba(255,255,255,0.35)"/>
+              <path d="M380 72l10-8v16z" fill="rgba(255,255,255,0.35)"/>
 
               <rect x="410" y="60" width="248" height="24" rx="12" fill="rgba(169,255,207,0.18)" stroke="rgba(169,255,207,0.34)"/>
               <text x="420" y="77" fill="rgba(255,255,255,0.7)" font-size="15">쿠폰으로 유도된 AOV</text>
 
-              <text x="22" y="118" fill="rgba(255,255,255,0.62)" font-size="15">MOV(Minimum Order Value, 최소주문금액)을 AOV보다 높게 → 추가 메뉴 주문 유도</text>
+              <text x="22" y="118" fill="rgba(255,255,255,0.62)" font-size="15">MOV(최소주문금액)을 AOV보다 높게 → 추가 메뉴 주문 유도</text>
             </svg>
           </div>
         </div>
 
         <div class="box">
-          <h3>4.2. '최소주문금액(MOV, Minimum Order Value)'의 마법</h3>
-          <p>모든 쿠폰 전략의 '절대 원칙'은, 쿠폰의 최소주문금액(MOV, Minimum Order Value)을 반드시 현재 가게의 평균 객단가(AOV, Average Order Value)보다 '높게' 설정하는 것입니다. 예를 들어, 우리 가게의 평균 객단가가 15,000원이라면, 2,000원 할인 쿠폰의 최소주문금액은 20,000원으로 설정해야 합니다. 이는 고객이 2,000원 할인을 받기 위해 5,000원어치 메뉴를 추가로 주문하도록 유도하는 장치입니다. 이 추가 매출에서 발생하는 이익이 할인액 2,000원을 상쇄하고도 남아 가게의 총이익을 증가시키는 원리입니다.</p>
+          <h3>4.2. '최소주문금액(MOV)'의 마법</h3>
+          <p>모든 쿠폰 전략의 '절대 원칙'은, 쿠폰의 최소주문금액(MOV)을 반드시 현재 가게의 평균 객단가(AOV)보다 '높게' 설정하는 것입니다. 예를 들어, 우리 가게의 평균 객단가가 15,000원이라면, 2,000원 할인 쿠폰의 최소주문금액은 20,000원으로 설정해야 합니다. 이는 고객이 2,000원 할인을 받기 위해 5,000원어치 메뉴를 추가로 주문하도록 유도하는 장치입니다. 이 추가 매출에서 발생하는 이익이 할인액 2,000원을 상쇄하고도 남아 가게의 총이익을 증가시키는 원리입니다.</p>
 
           <div class="callout" style="margin-top:12px">
             <b>예시(원문 그대로)</b>
@@ -650,72 +604,29 @@
           <h3>5.1. 역발상 제안</h3>
           <p>대부분의 사장님들은 경쟁이 가장 치열한 주말 저녁 같은 '피크 타임'에 광고와 쿠폰을 집중합니다. 하지만 진짜 '비용 효율'의 기회는 오히려 주문이 뜸한 '비수기(Off-Peak)'에 숨어 있습니다.</p>
 
-          <div class="visual" aria-label="시간대별 주문량 시계열 그래프">
-            <svg viewBox="0 0 900 280" width="100%" height="280" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="비수기 할인으로 평균 주문량 유지">
-              <rect x="0" y="0" width="900" height="280" rx="16" fill="rgba(255,255,255,0.03)"/>
-              <text x="22" y="34" fill="rgba(255,255,255,0.78)" font-size="16">시간대별 주문량: 비수기 할인으로 평균 주문량 유지</text>
+          <div class="visual" aria-label="피크 vs 비수기 개념 차트">
+            <svg viewBox="0 0 680 220" width="100%" height="220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="비수기 추가 주문이 고정비 부담을 낮춘다">
+              <rect x="0" y="0" width="680" height="220" rx="16" fill="rgba(255,255,255,0.03)"/>
+              <text x="22" y="34" fill="rgba(255,255,255,0.78)" font-size="16">오프피크 = 고정비가 놀고 있는 시간</text>
 
-              <!-- Y-axis -->
-              <path d="M80 240V60" stroke="rgba(255,255,255,0.18)" stroke-width="2"/>
-              <!-- X-axis -->
-              <path d="M80 240h700" stroke="rgba(255,255,255,0.18)" stroke-width="2"/>
+              <!-- axis -->
+              <path d="M50 180h600" stroke="rgba(255,255,255,0.18)" stroke-width="2"/>
+              <path d="M50 180V60" stroke="rgba(255,255,255,0.18)" stroke-width="2"/>
 
-              <!-- Y-axis labels -->
-              <text x="22" y="70" fill="rgba(255,255,255,0.62)" font-size="14">주문량</text>
-              <text x="22" y="100" fill="rgba(255,255,255,0.5)" font-size="12" text-anchor="end">80</text>
-              <text x="22" y="150" fill="rgba(255,255,255,0.5)" font-size="12" text-anchor="end">50</text>
-              <text x="22" y="200" fill="rgba(255,255,255,0.5)" font-size="12" text-anchor="end">20</text>
-              <text x="22" y="240" fill="rgba(255,255,255,0.5)" font-size="12" text-anchor="end">0</text>
+              <!-- peak bars -->
+              <rect x="160" y="90" width="70" height="90" rx="10" fill="rgba(139,213,255,0.18)" stroke="rgba(139,213,255,0.34)"/>
+              <text x="165" y="200" fill="rgba(255,255,255,0.62)" font-size="15">피크</text>
 
-              <!-- Average order line (before discount) -->
-              <line x1="80" y1="180" x2="780" y2="180" stroke="rgba(255,255,255,0.15)" stroke-width="1.5" stroke-dasharray="4 4"/>
-              <text x="790" y="184" fill="rgba(255,255,255,0.45)" font-size="12">평균 (할인 전)</text>
+              <!-- off-peak bars -->
+              <rect x="320" y="130" width="70" height="50" rx="10" fill="rgba(255,210,139,0.18)" stroke="rgba(255,210,139,0.34)"/>
+              <text x="311" y="200" fill="rgba(255,255,255,0.62)" font-size="15">비수기</text>
 
-              <!-- Average order line (after discount) -->
-              <line x1="80" y1="150" x2="780" y2="150" stroke="rgba(169,255,207,0.4)" stroke-width="2" stroke-dasharray="4 4"/>
-              <text x="790" y="154" fill="rgba(169,255,207,0.75)" font-size="12" font-weight="500">평균 (할인 후)</text>
+              <!-- extra order -->
+              <rect x="410" y="110" width="70" height="70" rx="10" fill="rgba(169,255,207,0.18)" stroke="rgba(169,255,207,0.34)"/>
+              <text x="392" y="200" fill="rgba(255,255,255,0.62)" font-size="15">비수기 +1</text>
 
-              <!-- Time periods -->
-              <!-- Morning (off-peak) -->
-              <rect x="120" y="200" width="100" height="40" rx="8" fill="rgba(255,210,139,0.18)" stroke="rgba(255,210,139,0.34)"/>
-              <text x="170" y="255" text-anchor="middle" fill="rgba(255,255,255,0.62)" font-size="14">오전</text>
-              <text x="170" y="195" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-size="13">20</text>
-
-              <!-- Lunch (peak) -->
-              <rect x="260" y="100" width="100" height="140" rx="8" fill="rgba(139,213,255,0.18)" stroke="rgba(139,213,255,0.34)"/>
-              <text x="310" y="255" text-anchor="middle" fill="rgba(255,255,255,0.62)" font-size="14">점심</text>
-              <text x="310" y="95" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-size="13">80</text>
-
-              <!-- Afternoon (off-peak before discount) -->
-              <rect x="400" y="200" width="100" height="40" rx="8" fill="rgba(255,210,139,0.12)" stroke="rgba(255,210,139,0.25)" stroke-dasharray="3 3"/>
-              <!-- Afternoon (off-peak after discount) -->
-              <rect x="400" y="150" width="100" height="90" rx="8" fill="rgba(169,255,207,0.18)" stroke="rgba(169,255,207,0.34)"/>
-              <text x="450" y="255" text-anchor="middle" fill="rgba(255,255,255,0.62)" font-size="14">오후</text>
-              <text x="450" y="145" text-anchor="middle" fill="rgba(169,255,207,0.85)" font-size="13" font-weight="500">50</text>
-              <text x="450" y="195" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-size="11">할인 전: 20</text>
-
-              <!-- Dinner (peak) -->
-              <rect x="540" y="100" width="100" height="140" rx="8" fill="rgba(139,213,255,0.18)" stroke="rgba(139,213,255,0.34)"/>
-              <text x="590" y="255" text-anchor="middle" fill="rgba(255,255,255,0.62)" font-size="14">저녁</text>
-              <text x="590" y="95" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-size="13">80</text>
-
-              <!-- Evening (off-peak before discount) -->
-              <rect x="680" y="200" width="100" height="40" rx="8" fill="rgba(255,210,139,0.12)" stroke="rgba(255,210,139,0.25)" stroke-dasharray="3 3"/>
-              <!-- Evening (off-peak after discount) -->
-              <rect x="680" y="150" width="100" height="90" rx="8" fill="rgba(169,255,207,0.18)" stroke="rgba(169,255,207,0.34)"/>
-              <text x="730" y="255" text-anchor="middle" fill="rgba(255,255,255,0.62)" font-size="14">심야</text>
-              <text x="730" y="145" text-anchor="middle" fill="rgba(169,255,207,0.85)" font-size="13" font-weight="500">50</text>
-              <text x="730" y="195" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-size="11">할인 전: 20</text>
-
-              <!-- Legend -->
-              <rect x="120" y="50" width="12" height="12" rx="2" fill="rgba(139,213,255,0.18)" stroke="rgba(139,213,255,0.34)"/>
-              <text x="140" y="61" fill="rgba(255,255,255,0.7)" font-size="13">피크 시간</text>
-              
-              <rect x="220" y="50" width="12" height="12" rx="2" fill="rgba(255,210,139,0.18)" stroke="rgba(255,210,139,0.34)"/>
-              <text x="240" y="61" fill="rgba(255,255,255,0.7)" font-size="13">비수기 (할인 전)</text>
-              
-              <rect x="380" y="50" width="12" height="12" rx="2" fill="rgba(169,255,207,0.18)" stroke="rgba(169,255,207,0.34)"/>
-              <text x="400" y="61" fill="rgba(169,255,207,0.85)" font-size="13" font-weight="500">비수기 (할인 후)</text>
+              <text x="22" y="62" fill="rgba(255,255,255,0.62)" font-size="15">주문량</text>
+              <text x="520" y="78" fill="rgba(255,255,255,0.62)" font-size="15">비수기 주문 1건 ↑ → 고정비 부담 ↓</text>
             </svg>
           </div>
         </div>
@@ -745,8 +656,8 @@
           <p>리뷰를 단순히 고객 만족도 지표나 평판 관리 대상으로만 생각해서는 안 됩니다. 리뷰는 당신이 집행하는 '모든 광고의 효율을 좌우하는 승수효과(Multiplier)'를 가진 핵심 자산입니다.</p>
 
           <div class="visual" aria-label="리뷰 승수 효과">
-            <svg viewBox="0 0 900 220" width="100%" height="220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="리뷰는 광고 효율을 배로 만들거나 반으로 깎는다">
-              <rect x="0" y="0" width="900" height="220" rx="16" fill="rgba(255,255,255,0.03)"/>
+            <svg viewBox="0 0 680 190" width="100%" height="190" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="리뷰는 광고 효율을 배로 만들거나 반으로 깎는다">
+              <rect x="0" y="0" width="680" height="190" rx="16" fill="rgba(255,255,255,0.03)"/>
               <text x="22" y="34" fill="rgba(255,255,255,0.78)" font-size="16">리뷰 = 광고 효율의 승수</text>
 
               <rect x="22" y="60" width="300" height="46" rx="14" fill="rgba(255,139,177,0.12)" stroke="rgba(255,139,177,0.30)"/>
@@ -758,8 +669,8 @@
               <path d="M172 116v34" stroke="rgba(255,255,255,0.18)" stroke-width="2"/>
               <path d="M508 116v34" stroke="rgba(255,255,255,0.18)" stroke-width="2"/>
 
-              <text x="80" y="196" fill="rgba(255,255,255,0.62)" font-size="15">전환율 ↓ → 광고비 증발</text>
-              <text x="358" y="196" fill="rgba(255,255,255,0.62)" font-size="15">전환율 ↑ → CAC(Customer Acquisition Cost) ↓</text>
+              <text x="80" y="166" fill="rgba(255,255,255,0.62)" font-size="15">전환율 ↓ → 광고비 증발</text>
+              <text x="414" y="166" fill="rgba(255,255,255,0.62)" font-size="15">전환율 ↑ → CAC ↓</text>
             </svg>
           </div>
         </div>
@@ -769,21 +680,7 @@
           <p>광고를 보고 큰 기대를 안고 가게 페이지에 들어온 고객이 3점대의 낮은 별점이나 "사진과 너무 달라요" 같은 부정적인 리뷰를 본다고 상상해 보십시오. 고객은 즉시 뒤로 가기 버튼을 누를 것이고, 이 고객을 데려오기 위해 잠재적으로 소요된 광고비는 그대로 증발해 버립니다.</p>
 
           <h3 style="margin-top:14px">6.3. 선순환 구조 구축</h3>
-          <p>반대로, 4.9점의 높은 평점과 정성스러운 리뷰가 가득한 가게는 동일한 광고비를 쓰더라도 고객의 신뢰를 즉시 얻어 주문 전환율이 극적으로 높아집니다. 이는 실질적인 고객 획득 비용(CAC, Customer Acquisition Cost)을 크게 낮추는 효과를 가져옵니다. 따라서, 리뷰 이벤트를 위한 작은 서비스 메뉴 투자는 더 큰 광고 예산 전체의 효율을 극대화하는 가장 강력한 '레버리지' 역할을 합니다. 궁극적으로, 잘 관리된 리뷰는 광고로 유입된 신규 고객이 우리 가게의 '찐팬'으로 남아 재구매하도록 만드는 가장 강력한 신뢰 장치이며, 이를 통해 초기 광고 획득 비용을 여러 번의 유기적 주문에 걸쳐 회수할 수 있습니다.</p>
-
-          <h3 style="margin-top:14px">6.4. 쿠팡이츠 리뷰 이벤트 공식 기능: 단순 할인이 아닌 '자산 투자'</h3>
-          <p>쿠팡이츠의 '공식 리뷰 이벤트 기능'은 단순한 가격 할인과는 본질적으로 다릅니다. 리뷰 이벤트를 가격 할인과 동일하게 보는 것은 전략적 기회를 놓치는 것입니다.</p>
-          
-          <p style="margin-top:12px"><b>비용 효율의 차이: '현금' vs '원가'</b></p>
-          <p>가격 할인(쿠폰)은 사장님의 수익에서 현금 그대로가 빠져나갑니다. 2,000원 할인 쿠폰 = 2,000원 손실입니다. 반면 리뷰 이벤트(서비스 메뉴)는 고객이 느끼는 혜택 금액(판매가) 대비 실제 원가(식자재비)는 훨씬 적습니다. 판매가 2,000원짜리 음료의 실제 원가는 500~800원 수준입니다. 즉, 적은 비용으로 고객에게 더 큰 혜택감을 줄 수 있는 가성비 마케팅입니다.</p>
-
-          <p style="margin-top:12px"><b>목적의 차이: '유입' vs '자산(노출)'</b></p>
-          <p>가격 할인은 고객이 가게를 클릭하고 구매를 결정하게 만드는 '미끼' 역할로, 당장의 매출을 일으키는 데 효과적입니다. 반면 리뷰 이벤트는 구매한 고객이 리뷰를 남기게 유도하는 장치입니다. 쿠팡이츠와 배민 모두 상위 노출 알고리즘에서 리뷰 수와 별점이 매우 중요한 요소로 작용합니다. 즉, 리뷰 이벤트는 단순 할인이 아니라 <b>미래의 상위 노출을 위한 '투자'</b>이자 가게의 <b>'자산'</b>을 쌓는 행위입니다.</p>
-
-          <p style="margin-top:12px"><b>공식 기능의 핵심: 먹튀 방지와 자동 관리</b></p>
-          <p>공식 기능은 주문 당 1회로 참여를 자동 제한하여 악의적인 고객(체리피커)을 시스템적으로 막아 불필요한 비용 누수를 줄입니다. 또한 공식 기능을 사용하면 고객 앱 내에서 리뷰 이벤트 진행 매장임이 더 효과적으로 표시되어, 리뷰를 중요하게 생각하는 고객들에게 어필할 수 있습니다.</p>
-
-          <p style="margin-top:12px">가격 할인(쿠폰)은 "일단 손님을 가게 안으로 들어오게 하는 호객 행위"이고, 리뷰 이벤트는 "들어온 손님에게 서비스를 주고 소문을 내달라고(리뷰) 부탁하여 가게 간판(평점/랭킹)을 닦는 행위"입니다. 리뷰 이벤트 공식 기능을 단순한 가격 할인으로 치부하기보다는, 상대적으로 저렴한 비용(원가)을 들여 내 가게의 경쟁력(노출 순위)을 높이는 가장 효율적인 수단으로 활용하시기 바랍니다.</p>
+          <p>반대로, 4.9점의 높은 평점과 정성스러운 리뷰가 가득한 가게는 동일한 광고비를 쓰더라도 고객의 신뢰를 즉시 얻어 주문 전환율이 극적으로 높아집니다. 이는 실질적인 고객 획득 비용(CAC)을 크게 낮추는 효과를 가져옵니다. 따라서, 리뷰 이벤트를 위한 작은 서비스 메뉴 투자는 더 큰 광고 예산 전체의 효율을 극대화하는 가장 강력한 '레버리지' 역할을 합니다. 궁극적으로, 잘 관리된 리뷰는 광고로 유입된 신규 고객이 우리 가게의 '찐팬'으로 남아 재구매하도록 만드는 가장 강력한 신뢰 장치이며, 이를 통해 초기 광고 획득 비용을 여러 번의 유기적 주문에 걸쳐 회수할 수 있습니다.</p>
 
           <div class="checklist" aria-label="리뷰 레버리지 체크리스트">
             <div class="check">
@@ -811,37 +708,23 @@
           <p>과도하게 연출된 메뉴 사진과 실제 배달된 음식의 차이는 고객의 신뢰를 한 번에 무너뜨리는 가장 큰 원인입니다. 특히 비싼 디저트 메뉴 등 시각적 만족도가 중요한 음식에서 이런 경험을 한 고객은 속았다고 느끼기 쉽습니다.</p>
 
           <div class="visual" aria-label="기대치 갭 시각화">
-            <div style="display: grid; grid-template-columns: 1fr auto 1fr; gap: 20px; align-items: center; padding: 20px 0;">
-              <!-- 연출 사진 -->
-              <div style="text-align: center;">
-                <div style="border-radius: 16px; overflow: hidden; border: 1px solid rgba(139,213,255,0.28); background: rgba(139,213,255,0.10); aspect-ratio: 4/3; display: flex; align-items: center; justify-content: center; margin-bottom: 12px;">
-                  <img src="img/img1_before.jpeg" alt="연출된 음식 사진 예시" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\'color: rgba(255,255,255,0.5); font-size: 14px;\'>연출 사진<br/>이미지 로드 실패</div>'">
-                </div>
-                <div style="color: rgba(255,255,255,0.75); font-size: 15px; font-weight: 500;">연출 사진</div>
-                <div style="color: rgba(255,255,255,0.5); font-size: 13px; margin-top: 4px;">과도하게 보정된 사진</div>
-              </div>
+            <svg viewBox="0 0 680 200" width="100%" height="200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="연출 사진과 실제 제품 차이가 신뢰를 무너뜨린다">
+              <rect x="0" y="0" width="680" height="200" rx="16" fill="rgba(255,255,255,0.03)"/>
+              <text x="22" y="34" fill="rgba(255,255,255,0.78)" font-size="16">기대치 갭 = 리뷰 폭탄의 시작</text>
 
-              <!-- 화살표 -->
-              <div style="display: flex; flex-direction: column; align-items: center; gap: 8px;">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M5 12h14" stroke="rgba(255,255,255,0.4)" stroke-width="2" stroke-linecap="round"/>
-                  <path d="M12 5l7 7-7 7" stroke="rgba(255,255,255,0.4)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                <div style="color: rgba(255,255,255,0.4); font-size: 12px; text-align: center;">실제 수령</div>
-              </div>
+              <rect x="22" y="60" width="300" height="110" rx="16" fill="rgba(139,213,255,0.10)" stroke="rgba(139,213,255,0.28)"/>
+              <text x="38" y="88" fill="rgba(255,255,255,0.75)" font-size="15">연출 사진</text>
+              <path d="M46 138c36-52 80-52 116 0 36-36 72-36 108 0" fill="none" stroke="rgba(139,213,255,0.55)" stroke-width="4" stroke-linecap="round"/>
 
-              <!-- 실제 수령 사진 -->
-              <div style="text-align: center;">
-                <div style="border-radius: 16px; overflow: hidden; border: 1px solid rgba(255,139,177,0.26); background: rgba(255,139,177,0.08); aspect-ratio: 4/3; display: flex; align-items: center; justify-content: center; margin-bottom: 12px;">
-                  <img src="img/img2_after.jpeg" alt="실제 배달된 음식 사진 예시" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\'color: rgba(255,255,255,0.5); font-size: 14px;\'>실제 수령<br/>이미지 로드 실패</div>'">
-                </div>
-                <div style="color: rgba(255,255,255,0.75); font-size: 15px; font-weight: 500;">실제 수령</div>
-                <div style="color: rgba(255,255,255,0.5); font-size: 13px; margin-top: 4px;">포장 용기 그대로</div>
-              </div>
-            </div>
-            <div style="text-align: center; color: rgba(255,255,255,0.62); font-size: 15px; margin-top: 16px; padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.1);">
-              차이가 클수록: 실망 → 1점 리뷰 → 전환율 급락 → 광고비 누수
-            </div>
+              <rect x="358" y="60" width="300" height="110" rx="16" fill="rgba(255,139,177,0.08)" stroke="rgba(255,139,177,0.26)"/>
+              <text x="374" y="88" fill="rgba(255,255,255,0.75)" font-size="15">실제 수령</text>
+              <path d="M382 140c36-26 80-26 116 0 36-18 72-18 108 0" fill="none" stroke="rgba(255,139,177,0.55)" stroke-width="4" stroke-linecap="round"/>
+
+              <path d="M330 116h24" stroke="rgba(255,255,255,0.22)" stroke-width="2" stroke-dasharray="6 6"/>
+              <path d="M346 108l10 8-10 8" fill="rgba(255,255,255,0.24)"/>
+
+              <text x="22" y="188" fill="rgba(255,255,255,0.62)" font-size="15">차이가 클수록: 실망 → 1점 리뷰 → 전환율 급락 → 광고비 누수</text>
+            </svg>
           </div>
         </div>
 
@@ -891,8 +774,10 @@
           <p style="margin-top:10px">이것이 당신의 통장에 실제 돈이 쌓이게 하는 작지만 강력한 변화의 시작입니다.</p>
         </div>
         <div class="box">
-          <h3 style="margin-top:0">마무리 문장</h3>
-          <p>생각으로만 끝내지 마십시오. 오늘 소개된 6가지 전략 중, 당신의 가게에 가장 먼저 적용해보고 싶은 것은 무엇습니까? 작은 실행 하나가 당신의 순이익을 바꾸게 될 것입니다.</p>
+          <div class="callout" style="border-style:solid; border-color: rgba(139,213,255,0.28)">
+            <b>마무리 문장</b>
+            <p>생각으로만 끝내지 마십시오. 오늘 소개된 6가지 전략 중, 당신의 가게에 가장 먼저 적용해보고 싶은 것은 무엇습니까? 작은 실행 하나가 당신의 순이익을 바꾸게 될 것입니다.</p>
+          </div>
           <div class="ctaRow" style="margin-top:12px">
             <a class="btn primary" href="#s1">상단부터 다시 보기</a>
             <a class="btn" href="#top">맨 위로</a>
@@ -903,10 +788,7 @@
 
     <footer>
       <div style="display:flex; flex-wrap:wrap; gap:10px; align-items:center; justify-content:space-between">
-        <div style="display:flex; align-items:center; gap:8px;">
-          <img src="img/puree watch.png" alt="퓨레 워치" style="height: 24px; width: auto;" />
-          <span style="color: var(--muted); font-size: 14px;">이 아티클은 퓨레 워치를 통해 발행되었습니다.</span>
-        </div>
+        
         <span>인쇄하려면 브라우저 인쇄(⌘/Ctrl + P)를 사용하세요.</span>
       </div>
     </footer>
