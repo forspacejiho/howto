@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://forspacejiho.github.io/howto/sitemap.xml
+
+# Disallow references folder (markdown files)
+Disallow: /references/
+
