@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>배민 순이익 2배 만드는 실전 전략</title>
+  <meta name="description" content="배달의민족 순이익 극대화 전략 - 우리가게클릭, 쿠폰, 운영지수 최적화" />
+  <style>
+    :root{
+      --bg: #0b1220;
+      --panel: rgba(255,255,255,0.06);
+      --panel2: rgba(255,255,255,0.08);
+      --text: rgba(255,255,255,0.92);
+      --muted: rgba(255,255,255,0.68);
+      --line: rgba(255,255,255,0.12);
+      --accent: #8bd5ff;
+      --accent2: #a9ffcf;
+      --warn: #ffd28b;
+      --good: #7ff3b1;
+      --bad: #ff8bb1;
+      --shadow: 0 20px 50px rgba(0,0,0,0.35);
+      --radius: 18px;
+      --max: 1040px;
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Noto Sans KR", Apple SD Gothic Neo, "Malgun Gothic", Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+    }
+
+    *{box-sizing:border-box}
+    html,body{
+      margin:0;
+      font-family: var(--sans);
+      color: var(--text);
+      background: var(--bg);
+      overflow-x:hidden;
+      color-scheme: dark;
+      font-size: 17px;
+      line-height: 1.8;
+      letter-spacing: -0.1px;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body::before{
+      content:"";
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
+      background:
+        radial-gradient(1200px 800px at 20% 0%, rgba(139,213,255,0.18), transparent 55%),
+        radial-gradient(900px 700px at 85% 20%, rgba(169,255,207,0.14), transparent 60%),
+        radial-gradient(900px 700px at 70% 95%, rgba(255,210,139,0.10), transparent 55%),
+        linear-gradient(180deg, #071023, #050814 55%, #040611);
+      transform: translateZ(0);
+    }
+
+    a{color:inherit}
+
+    .wrap{max-width: 980px; margin: 0 auto; padding: 26px 18px 110px;}
+
+    .top{
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(14px);
+      background: linear-gradient(180deg, rgba(11,18,32,0.86), rgba(11,18,32,0.35));
+      border-bottom: 1px solid var(--line);
+    }
+    .top .wrap{padding: 12px 18px; display:flex; align-items:center; gap:14px; justify-content: space-between;}
+    .brand{display:flex; align-items:center; gap:10px; text-decoration:none;}
+    .logo{
+      width: 34px; height: 34px; border-radius: 12px;
+      background: linear-gradient(135deg, rgba(139,213,255,0.9), rgba(169,255,207,0.85));
+      box-shadow: 0 12px 30px rgba(0,0,0,0.35);
+      display:grid; place-items:center;
+      border: 1px solid rgba(255,255,255,0.25);
+    }
+    .logo svg{opacity:0.92}
+    .brand b{font-size: 16px; letter-spacing: -0.2px}
+    .nav{display:flex; gap: 10px; flex-wrap: wrap; justify-content:flex-end}
+    .nav a{
+      font-size: 14px;
+      text-decoration:none;
+      padding: 10px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.14);
+      background: rgba(255,255,255,0.04);
+      color: var(--muted);
+      transition: 160ms ease;
+    }
+    .nav a:hover{transform: translateY(-1px); border-color: rgba(139,213,255,0.45); color: var(--text)}
+
+    .card{
+      border-radius: var(--radius);
+      background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.04));
+      border: 1px solid rgba(255,255,255,0.12);
+      box-shadow: var(--shadow);
+      margin-top: 22px;
+      padding: 22px;
+    }
+
+    h1{margin: 20px 0 10px; font-size: 32px; line-height: 1.3; letter-spacing: -0.8px}
+    h2{margin: 32px 0 14px; font-size: 24px; line-height: 1.3; letter-spacing: -0.5px}
+    h3{margin: 24px 0 12px; font-size: 20px; line-height: 1.4; letter-spacing: -0.3px}
+    
+    p{margin: 0 0 14px; line-height: 1.9; color: var(--muted)}
+    p:last-child{margin-bottom:0}
+
+    ul, ol{margin: 14px 0; padding-left: 24px; color: var(--muted); line-height: 1.9}
+    li{margin: 6px 0}
+
+    strong, b{color: var(--text); font-weight: 600}
+
+    hr{border: none; border-top: 1px solid var(--line); margin: 28px 0}
+
+    .pill{
+      display:inline-flex; align-items:center; gap:8px;
+      font-size: 13.5px;
+      color: var(--muted);
+      border: 1px solid rgba(255,255,255,0.14);
+      background: rgba(255,255,255,0.03);
+      border-radius: 999px;
+      padding: 6px 10px;
+      margin-bottom: 10px;
+    }
+
+    footer{
+      margin-top: 30px;
+      padding: 22px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 14px;
+      text-align: center;
+    }
+
+    .back-btn{
+      display:inline-flex; align-items:center; gap:8px;
+      padding: 12px 14px; border-radius: 12px; text-decoration:none;
+      border: 1px solid rgba(255,255,255,0.16);
+      background: rgba(255,255,255,0.05);
+      color: var(--text);
+      font-size: 15px;
+      transition: 160ms ease;
+      margin-top: 20px;
+    }
+    .back-btn:hover{transform: translateY(-1px); border-color: rgba(139,213,255,0.45)}
+
+    .box{
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.04);
+      padding: 18px;
+      margin: 18px 0;
+    }
+    .box h3{margin:0 0 12px; font-size: 20px; letter-spacing:-0.3px}
+    .box p{margin: 0 0 14px; color: var(--muted); line-height: 1.9; font-size: 16px}
+    .box p:last-child{margin-bottom:0}
+
+    .callout{
+      padding: 16px;
+      border-radius: 16px;
+      border: 1px dashed rgba(139,213,255,0.25);
+      background: linear-gradient(135deg, rgba(139,213,255,0.08), rgba(139,213,255,0.03));
+      margin: 16px 0;
+    }
+    .callout b{display:block; margin-bottom: 8px; color: var(--text); font-size: 16px}
+    .callout p{margin:0; color: var(--muted); font-size: 15px; line-height:1.9}
+
+    ul, ol{margin: 14px 0; padding-left: 24px; color: var(--muted); line-height: 1.9}
+    li{margin: 8px 0; line-height: 1.85}
+  </style>
+</head>
+<body>
+
+  <div class="top">
+    <div class="wrap">
+      <a class="brand" href="index.html" aria-label="메인으로">
+        <div class="logo" aria-hidden="true">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2l8 4v6c0 5-3.4 9.4-8 10-4.6-.6-8-5-8-10V6l8-4z" stroke="rgba(0,0,0,0.55)" stroke-width="1.6"/>
+            <path d="M8.3 12.2l2.3 2.5 5.2-5.6" stroke="rgba(0,0,0,0.55)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <b>배민 실전 전략</b>
+      </a>
+
+      <nav class="nav" aria-label="섹션 이동">
+        <a href="index.html">메인</a>
+        <a href="coupangeats.html">쿠팡이츠</a>
+        <a href="dgy_ygy.html">요기요·땡겨요</a>
+        <a href="naver.html">네이버</a>
+      </nav>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <article class="card">
+      <span class="pill">배달의민족</span>
+      <h1>배민 순이익 2배 만드는 실전 전략</h1>
+      
+      <p>네이버 플레이스와 마찬가지로, 배달의민족(배민) 역시 <strong>'노출(광고)'</strong> 과 <strong>'전환(매력도)'</strong> 의 싸움입니다. 하지만 배민은 수수료 구조가 훨씬 복잡하고 경쟁이 치열하기 때문에, 단순히 매출을 늘리는 것보다 '공헌이익(마진)'을 지키는 전략이 필수적입니다.</p>
+      
+      <p>제공해주신 자료들을 바탕으로 배민에서 비용은 통제하고 순이익은 극대화하는 4단계 전략을 블로그 아티클 형식으로 정리해 드립니다.</p>
+
+      <hr />
+
+      <h2>매출은 1억인데 남는 게 없다? 배달의민족 '순이익' 2배 만드는 실전 세팅법</h2>
+      
+      <p>안녕하세요. 사장님들의 든든한 파트너입니다. "옆 가게는 깃발도 별로 없는 것 같은데 왜 주문이 많을까?", "광고비랑 수수료 떼고 나면 남는 게 없네..." 혹시 이런 한탄을 하고 계시진 않나요?</p>
+
+      <p>최근 배민은 <strong>'무료 배달(배민클럽)'</strong> 과 '가게배달/배민배달의 통합' 등으로 판도가 완전히 뒤집혔습니다. 이제는 무작정 광고비를 태우는 게 아니라, 철저하게 '수익률(ROAS)' 관점에서 접근해야 살아남습니다. 배민 상위 1% 사장님들이 몰래 쓰는 <strong>'순이익 방어 및 극대화 전략'</strong> 을 공개합니다.</p>
+
+      <div class="box">
+        <h2>1단계: 광고 전, '앱테리어(App-terior)'로 내실부터 다지세요</h2>
+        
+        <p>손님을 가게로 끌어들이기 전에(광고), 가게 내부가 엉망이면 손님은 바로 나갑니다. 배민에서는 이것을 '구매 전환율' 관리라고 부릅니다. 전환율이 낮으면 아무리 비싼 클릭 광고(CPC)를 해도 돈만 버리는 꼴이 됩니다.</p>
+        
+        <ol>
+          <li><strong>메뉴 옵션은 '조리 순서'대로:</strong> 옵션 구성이 복잡하면 고객은 주문을 포기합니다. 옵션 순서를 사장님의 주방 조리 순서와 맞추세요. 이는 고객의 상상력을 자극해 주문을 유도하고, 사장님의 조리 실수도 줄여줍니다.</li>
+          <li><strong>'인지 가격' 낮추기 전략:</strong> 메인 메뉴 가격은 진입 장벽을 낮추기 위해 합리적으로 설정하고, 필수 옵션이나 사이드 추가를 통해 객단가를 올리는 '마라탕식 가격 구조'를 활용하세요. 고객은 저렴해 보여서 들어왔다가, 이것저것 담으며 결국 높은 금액을 결제하게 됩니다.</li>
+          <li><strong>사진은 6장 꽉 채우기:</strong> 메뉴 이미지는 한 장이 아니라 최대 6장까지 등록 가능합니다. 상세 컷, 포장 상태 등을 꽉 채워 넣어 신뢰도를 높이세요. 사진 퀄리티는 클릭률과 주문율에 직결됩니다.</li>
+        </ol>
+
+        <div class="callout">
+          <b>💡 핵심 꿀팁</b>
+          <p>메뉴 설명에 단순히 "맛있어요"라고 쓰지 마세요. "OO산 메밀을 사용해 툭툭 끊기는 식감이 일품"처럼 구체적인 재료와 맛 표현을 적어야 주문율이 올라갑니다.</p>
+        </div>
+      </div>
+
+      <div class="box">
+        <h2>2단계: '우리가게클릭(CPC)', 입찰가 경쟁에 휘말리지 마세요</h2>
+        
+        <p>"남들이 1,000원 쓴다고 나도 1,000원 써야 하나?" 절대 아닙니다. CPC 광고의 핵심은 <strong>'가성비'</strong>입니다.</p>
+        
+        <ol>
+          <li><strong>입찰가의 함정 탈출:</strong> 무조건 입찰가를 높인다고 노출이 비례해서 늘어나는 건 아닙니다. 처음에는 200~600원 사이의 낮은 금액으로 시작하여 노출과 주문 데이터를 보며 조금씩 조정하세요. 입찰가보다는 가게의 매력도(리뷰, 찜)가 기본 노출 순위를 결정합니다.</li>
+          <li><strong>목표 ROAS 설정:</strong> 광고비 대비 매출(ROAS)에 집착하기보다, <strong>'순이익 기반의 ROAS'</strong> 를 계산해야 합니다. 내 가게의 마진율을 고려했을 때, 클릭당 얼마까지 쓸 수 있는지 <strong>'최대 허용 CPC'</strong> 를 계산해두고 그 이상은 절대 넘지 마세요.</li>
+          <li><strong>On/Off 전략:</strong> 하루 종일 광고를 켜둘 필요는 없습니다. 직장인 타겟이라면 점심시간(11:00~13:00), 야식 메뉴라면 저녁 시간 등 피크 타임 직전에 예산을 집중하고, 주문이 뜸한 시간대에는 광고를 끄거나 예산을 줄이는 '게릴라 전략'으로 광고비를 아끼세요.</li>
+        </ol>
+      </div>
+
+      <div class="box">
+        <h2>3단계: 쿠폰, '할인'이 아니라 '객단가 상승' 도구입니다</h2>
+        
+        <p>쿠폰은 단순히 깎아주는 게 아닙니다. 손님이 "더 시키게 만드는" 미끼여야 합니다.</p>
+        
+        <ol>
+          <li><strong>최소 주문 금액(MOV)의 마법:</strong> 쿠폰을 쓸 수 있는 최소 주문 금액을 내 가게의 평균 객단가보다 2,000~3,000원 높게 설정하세요. 고객은 할인을 받기 위해 사이드 메뉴나 음료를 추가하게 됩니다. 이렇게 올라가는 매출이 할인 비용을 상쇄해야 남는 장사입니다.</li>
+          <li><strong>시간대별 차등 쿠폰:</strong> 주말 피크 타임에는 굳이 쿠폰을 뿌리지 않아도 주문이 들어옵니다. 반면, 평일 오후 2~5시 같은 유휴 시간대에만 적용되는 '타임 쿠폰'을 발행하세요. 노는 인력과 고정비를 효율적으로 활용할 수 있습니다.</li>
+          <li><strong>먹튀 방지 설정:</strong> 신규 고객 유치용으로 파격적인 쿠폰을 뿌릴 때는 반드시 '1인 1회' 제한을 거세요. 과거 무제한 쿠폰 발급 사태처럼 체리피커들의 먹잇감이 될 수 있으니 시스템적 방어는 필수입니다.</li>
+        </ol>
+      </div>
+
+      <div class="box">
+        <h2>4단계: '운영 지수'가 곧 노출 순위입니다</h2>
+        
+        <p>배민 알고리즘은 <strong>'성실한 가게'</strong> 를 좋아합니다. 돈으로 살 수 없는 '운영 지수'를 관리해야 상위 노출 기회를 잡습니다.</p>
+        
+        <ol>
+          <li><strong>조리 시간 준수:</strong> 고객과의 약속인 '배달 예상 시간'을 철저히 지키세요. 조리 지연이나 주문 취소가 잦으면 페널티를 받아 노출이 뒤로 밀립니다.</li>
+          <li><strong>주문 접수 속도:</strong> 주문이 들어오면 1분 이내, 가능하면 10초 이내에 '접수' 버튼을 누르세요. 빠른 응대율은 배민 시스템에서 높은 점수를 받습니다.</li>
+          <li><strong>품절/영업 임시 중지 최소화:</strong> 재료 준비 부족으로 영업을 일시 중지하거나 메뉴를 품절시키면, 배민 입장에서는 '수수료를 벌어주지 못하는 가게'로 인식되어 노출도가 하락합니다. 재료 관리와 브레이크 타임 설정에 신중하세요.</li>
+        </ol>
+      </div>
+
+      <hr />
+
+      <div class="callout" style="border-color: rgba(169,255,207,0.35); background: linear-gradient(135deg, rgba(169,255,207,0.08), rgba(169,255,207,0.03));">
+        <b>📝 요약: 배민 순이익 극대화 3줄 요약</b>
+        <ol style="margin: 8px 0 0; padding-left: 20px;">
+          <li><strong>세팅 먼저:</strong> 광고비 쓰기 전, 메뉴 사진 6장과 '조리 순서형' 옵션 구성으로 주문 전환율부터 높이세요.</li>
+          <li><strong>광고는 짠물처럼:</strong> 우가클은 저단가(200~600원)로 시작하고, 피크 타임 위주로 '치고 빠지는' 전략을 쓰세요.</li>
+          <li><strong>쿠폰은 영리하게:</strong> 무조건 할인이 아니라, '객단가 업'과 '비수기 채우기' 용도로만 제한적으로 사용하세요.</li>
+        </ol>
+      </div>
+
+      <p style="margin-top: 20px;">배민은 이제 '얼마나 많이 파느냐'보다 <strong>'얼마나 효율적으로 파느냐'</strong> 의 싸움입니다. 오늘 당장 사장님 앱의 <strong>'가게 통계'</strong> 에 들어가 우리 가게의 재주문율과 클릭률부터 점검해 보세요. 숫자를 보는 순간, 새는 돈을 막을 수 있습니다.</p>
+
+      <a href="index.html#platforms" class="back-btn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M19 12H5" stroke="rgba(255,255,255,0.85)" stroke-width="2" stroke-linecap="round"/>
+          <path d="M12 19l-7-7 7-7" stroke="rgba(255,255,255,0.85)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        메인으로 돌아가기
+      </a>
+    </article>
+
+    <footer>
+      <div style="display:flex; flex-wrap:wrap; gap:10px; align-items:center; justify-content:space-between">
+        <a href="https://datapuree.io/products/watch" target="_blank" rel="noopener noreferrer" style="display:flex; align-items:center; gap:8px; text-decoration:none; transition: opacity 160ms ease;">
+          <img src="img/puree watch.png" alt="퓨레 워치" style="height: 24px; width: auto;" />
+          <span style="color: var(--muted); font-size: 14px;">이 아티클은 퓨레 워치를 통해 발행되었습니다.</span>
+        </a>
+        
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
+
